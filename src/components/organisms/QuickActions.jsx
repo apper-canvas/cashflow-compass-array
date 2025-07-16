@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/atoms/Card";
 import Button from "@/components/atoms/Button";
+import Select from "@/components/atoms/Select";
 import FormField from "@/components/molecules/FormField";
 import ApperIcon from "@/components/ApperIcon";
 import { formatCurrency } from "@/utils/formatters";
@@ -159,12 +160,11 @@ const QuickActions = ({ onTransactionAdded }) => {
             />
           </FormField>
 
-          <div className="grid grid-cols-2 gap-4">
+<div className="grid grid-cols-2 gap-4">
             <FormField label="Category">
-              <select
+              <Select
                 value={formData.categoryId}
-                onChange={(e) => handleInputChange("categoryId", e.target.value)}
-                className="flex h-10 w-full rounded-lg border border-secondary-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                onValueChange={(value) => handleInputChange("categoryId", value)}
                 required
               >
                 <option value="">Select category</option>
@@ -173,14 +173,13 @@ const QuickActions = ({ onTransactionAdded }) => {
                     {category.name}
                   </option>
                 ))}
-              </select>
+              </Select>
             </FormField>
 
-            <FormField label="Account">
-              <select
+<FormField label="Account">
+              <Select
                 value={formData.accountId}
-                onChange={(e) => handleInputChange("accountId", e.target.value)}
-                className="flex h-10 w-full rounded-lg border border-secondary-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                onValueChange={(value) => handleInputChange("accountId", value)}
                 required
               >
                 <option value="">Select account</option>
@@ -189,7 +188,7 @@ const QuickActions = ({ onTransactionAdded }) => {
                     {account.name}
                   </option>
                 ))}
-              </select>
+              </Select>
             </FormField>
           </div>
 
