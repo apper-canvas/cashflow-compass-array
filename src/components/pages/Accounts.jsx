@@ -33,6 +33,13 @@ const Accounts = () => {
             Add Account
           </Button>
         </div>
+</div>
+
+      <div className="flex justify-center mb-6">
+        <Button variant="primary">
+          <ApperIcon name="Plus" className="w-4 h-4 mr-2" />
+          Add Account
+        </Button>
       </div>
 
       <AccountCards key={refreshKey} />
