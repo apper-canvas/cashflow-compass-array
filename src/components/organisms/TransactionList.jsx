@@ -121,12 +121,12 @@ const handleEditTransaction = (transaction) => {
     }
   };
 
-  const filteredTransactions = transactions.filter(transaction => {
-    const matchesSearch = transaction.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         transaction.amount.toString().includes(searchTerm);
+const filteredTransactions = transactions.filter(transaction => {
+    const matchesSearch = (transaction.description?.toLowerCase() || '').includes(searchTerm.toLowerCase()) ||
+                         (transaction.amount?.toString() || '').includes(searchTerm);
     
-    const matchesDateRange = (!dateRange.start || new Date(transaction.date) >= new Date(dateRange.start)) &&
-                            (!dateRange.end || new Date(transaction.date) <= new Date(dateRange.end));
+    const matchesDateRange = (!dateRange.start || new Date(transaction.date_c || transaction.date) >= new Date(dateRange.start)) &&
+                            (!dateRange.end || new Date(transaction.date_c || transaction.date) <= new Date(dateRange.end));
     
     return matchesSearch && matchesDateRange;
   });
