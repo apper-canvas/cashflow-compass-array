@@ -111,46 +111,42 @@ const QuickActions = ({ onTransactionAdded }) => {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
-            <FormField>
-              <div className="flex rounded-lg border border-secondary-200 p-1">
-                <Button
-                  type="button"
-                  variant={formData.type === "expense" ? "primary" : "ghost"}
-                  size="sm"
-                  onClick={() => handleInputChange("type", "expense")}
-                  className="flex-1"
-                >
-                  <ApperIcon name="Minus" className="w-4 h-4 mr-1" />
-                  Expense
-                </Button>
-                <Button
-                  type="button"
-                  variant={formData.type === "income" ? "primary" : "ghost"}
-                  size="sm"
-                  onClick={() => handleInputChange("type", "income")}
-                  className="flex-1"
-                >
-                  <ApperIcon name="Plus" className="w-4 h-4 mr-1" />
-                  Income
-                </Button>
-              </div>
-            </FormField>
-
-            <FormField label="Amount">
-              <input
-                type="number"
-                step="0.01"
-                min="0"
-                value={formData.amount}
-                onChange={(e) => handleInputChange("amount", e.target.value)}
-                className="flex h-10 w-full rounded-lg border border-secondary-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                placeholder="0.00"
-                required
-              />
-            </FormField>
+<form onSubmit={handleSubmit} className="space-y-4">
+          <div className="flex rounded-lg border border-secondary-200 p-1">
+            <Button
+              type="button"
+              variant={formData.type === "expense" ? "primary" : "ghost"}
+              size="sm"
+              onClick={() => handleInputChange("type", "expense")}
+              className="flex-1"
+            >
+              <ApperIcon name="Minus" className="w-4 h-4 mr-1" />
+              Expense
+            </Button>
+            <Button
+              type="button"
+              variant={formData.type === "income" ? "primary" : "ghost"}
+              size="sm"
+              onClick={() => handleInputChange("type", "income")}
+              className="flex-1"
+            >
+              <ApperIcon name="Plus" className="w-4 h-4 mr-1" />
+              Income
+            </Button>
           </div>
+
+          <FormField label="Amount">
+            <input
+              type="number"
+              step="0.01"
+              min="0"
+              value={formData.amount}
+              onChange={(e) => handleInputChange("amount", e.target.value)}
+              className="flex h-10 w-full rounded-lg border border-secondary-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              placeholder="0.00"
+              required
+            />
+          </FormField>
 
           <FormField label="Description">
             <input
