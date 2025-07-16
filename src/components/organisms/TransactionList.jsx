@@ -57,12 +57,12 @@ const TransactionList = ({ showActions = true, limit }) => {
 const handleEditTransaction = (transaction) => {
     setEditingId(transaction.Id);
     setEditFormData({
-      type: transaction.type,
-      amount: transaction.amount.toString(),
-      description: transaction.description,
-      categoryId: transaction.categoryId.toString(),
-      accountId: transaction.accountId.toString(),
-      date: transaction.date
+      type: transaction.type || '',
+      amount: transaction.amount?.toString() ?? '',
+      description: transaction.description || '',
+      categoryId: transaction.categoryId?.toString() ?? '0',
+      accountId: transaction.accountId?.toString() ?? '0',
+      date: transaction.date || ''
     });
   };
 
@@ -335,19 +335,19 @@ message="Start by adding your first transaction to track your finances."
                           size="sm"
                           onClick={() => handleDeleteTransaction(transaction.Id)}
                         >
-                          <ApperIcon name="Trash2" className="w-4 h-4" />
+<ApperIcon name="Trash2" className="w-4 h-4" />
                         </Button>
                       </div>
-)}
+                    )}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-      )}
-    </CardContent>
-  </Card>
-);
+              );
+            })}
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  );
 };
 
 export default TransactionList;
