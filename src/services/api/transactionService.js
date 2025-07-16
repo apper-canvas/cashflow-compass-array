@@ -1,10 +1,12 @@
 class TransactionService {
   constructor() {
+    // Initialize ApperClient with Project ID and Public Key
     const { ApperClient } = window.ApperSDK;
     this.apperClient = new ApperClient({
       apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
       apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
     });
+    this.tableName = 'transaction_c';
   }
 
   async getAll() {
@@ -34,24 +36,14 @@ class TransactionService {
         ]
       };
 
-      const response = await this.apperClient.fetchRecords('transaction_c', params);
+      const response = await this.apperClient.fetchRecords(this.tableName, params);
       
       if (!response.success) {
         console.error(response.message);
         throw new Error(response.message);
       }
 
-      return response.data.map(transaction => ({
-        Id: transaction.Id,
-        name: transaction.Name,
-        Tags: transaction.Tags,
-        amount: transaction.amount_c,
-        type: transaction.type_c,
-        description: transaction.description_c,
-        date: transaction.date_c,
-        categoryId: transaction.category_id_c?.Id || transaction.category_id_c,
-        accountId: transaction.account_id_c?.Id || transaction.account_id_c
-      }));
+      return response.data || [];
     } catch (error) {
       if (error?.response?.data?.message) {
         console.error("Error fetching transactions:", error?.response?.data?.message);
@@ -84,25 +76,14 @@ class TransactionService {
         ]
       };
 
-      const response = await this.apperClient.getRecordById('transaction_c', id, params);
+      const response = await this.apperClient.getRecordById(this.tableName, id, params);
       
       if (!response.success) {
         console.error(response.message);
         throw new Error(response.message);
       }
 
-      const transaction = response.data;
-      return {
-        Id: transaction.Id,
-        name: transaction.Name,
-        Tags: transaction.Tags,
-        amount: transaction.amount_c,
-        type: transaction.type_c,
-        description: transaction.description_c,
-        date: transaction.date_c,
-        categoryId: transaction.category_id_c?.Id || transaction.category_id_c,
-        accountId: transaction.account_id_c?.Id || transaction.account_id_c
-      };
+      return response.data;
     } catch (error) {
       if (error?.response?.data?.message) {
         console.error(`Error fetching transaction with ID ${id}:`, error?.response?.data?.message);
@@ -129,7 +110,7 @@ class TransactionService {
         }]
       };
 
-      const response = await this.apperClient.createRecord('transaction_c', params);
+      const response = await this.apperClient.createRecord(this.tableName, params);
       
       if (!response.success) {
         console.error(response.message);
@@ -187,7 +168,7 @@ class TransactionService {
         }]
       };
 
-      const response = await this.apperClient.updateRecord('transaction_c', params);
+      const response = await this.apperClient.updateRecord(this.tableName, params);
       
       if (!response.success) {
         console.error(response.message);
@@ -235,7 +216,7 @@ class TransactionService {
         RecordIds: [id]
       };
 
-      const response = await this.apperClient.deleteRecord('transaction_c', params);
+      const response = await this.apperClient.deleteRecord(this.tableName, params);
       
       if (!response.success) {
         console.error(response.message);
