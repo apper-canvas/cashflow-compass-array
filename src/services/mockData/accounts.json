@@ -1,0 +1,30 @@
+[
+  {
+    "Id": 1,
+    "name": "Primary Checking",
+    "type": "checking",
+    "balance": 2500.00,
+    "color": "#2563EB"
+  },
+  {
+    "Id": 2,
+    "name": "Emergency Savings",
+    "type": "savings",
+    "balance": 5000.00,
+    "color": "#10B981"
+  },
+  {
+    "Id": 3,
+    "name": "Credit Card",
+    "type": "credit",
+    "balance": -1200.00,
+    "color": "#EF4444"
+  },
+  {
+    "Id": 4,
+    "name": "Cash Wallet",
+    "type": "cash",
+    "balance": 150.00,
+    "color": "#F59E0B"
+  }
+]

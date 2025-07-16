@@ -1,0 +1,137 @@
+[
+  {
+    "Id": 1,
+    "amount": 1200.00,
+    "type": "income",
+    "categoryId": 1,
+    "description": "Monthly Salary",
+    "date": "2024-01-01",
+    "accountId": 1
+  },
+  {
+    "Id": 2,
+    "amount": 450.00,
+    "type": "expense",
+    "categoryId": 2,
+    "description": "Grocery shopping at Whole Foods",
+    "date": "2024-01-02",
+    "accountId": 1
+  },
+  {
+    "Id": 3,
+    "amount": 85.50,
+    "type": "expense",
+    "categoryId": 3,
+    "description": "Gas station fill-up",
+    "date": "2024-01-03",
+    "accountId": 1
+  },
+  {
+    "Id": 4,
+    "amount": 1500.00,
+    "type": "expense",
+    "categoryId": 4,
+    "description": "Monthly rent payment",
+    "date": "2024-01-01",
+    "accountId": 1
+  },
+  {
+    "Id": 5,
+    "amount": 120.00,
+    "type": "expense",
+    "categoryId": 5,
+    "description": "Electric bill",
+    "date": "2024-01-04",
+    "accountId": 1
+  },
+  {
+    "Id": 6,
+    "amount": 75.00,
+    "type": "expense",
+    "categoryId": 6,
+    "description": "Dinner at restaurant",
+    "date": "2024-01-05",
+    "accountId": 2
+  },
+  {
+    "Id": 7,
+    "amount": 25.00,
+    "type": "expense",
+    "categoryId": 7,
+    "description": "Coffee and pastries",
+    "date": "2024-01-06",
+    "accountId": 2
+  },
+  {
+    "Id": 8,
+    "amount": 500.00,
+    "type": "income",
+    "categoryId": 8,
+    "description": "Freelance project payment",
+    "date": "2024-01-07",
+    "accountId": 2
+  },
+  {
+    "Id": 9,
+    "amount": 200.00,
+    "type": "expense",
+    "categoryId": 9,
+    "description": "Monthly gym membership",
+    "date": "2024-01-08",
+    "accountId": 1
+  },
+  {
+    "Id": 10,
+    "amount": 150.00,
+    "type": "expense",
+    "categoryId": 10,
+    "description": "New running shoes",
+    "date": "2024-01-09",
+    "accountId": 2
+  },
+  {
+    "Id": 11,
+    "amount": 80.00,
+    "type": "expense",
+    "categoryId": 2,
+    "description": "Weekly grocery shopping",
+    "date": "2024-01-10",
+    "accountId": 1
+  },
+  {
+    "Id": 12,
+    "amount": 50.00,
+    "type": "expense",
+    "categoryId": 3,
+    "description": "Gas station",
+    "date": "2024-01-11",
+    "accountId": 1
+  },
+  {
+    "Id": 13,
+    "amount": 35.00,
+    "type": "expense",
+    "categoryId": 6,
+    "description": "Lunch with colleagues",
+    "date": "2024-01-12",
+    "accountId": 2
+  },
+  {
+    "Id": 14,
+    "amount": 100.00,
+    "type": "income",
+    "categoryId": 11,
+    "description": "Cashback rewards",
+    "date": "2024-01-13",
+    "accountId": 3
+  },
+  {
+    "Id": 15,
+    "amount": 300.00,
+    "type": "expense",
+    "categoryId": 12,
+    "description": "Monthly insurance premium",
+    "date": "2024-01-14",
+    "accountId": 1
+  }
+]

@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'react-toastify/dist/ReactToastify.css';
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    @apply bg-white text-secondary-600 font-inter;
+  }
+}
+
+@layer components {
+  .toast-container {
+    @apply text-sm;
+  }
+  
+  .Toastify__toast {
+    @apply bg-white border border-secondary-200 shadow-lg rounded-lg;
+  }
+  
+  .Toastify__toast--success {
+    @apply border-accent-200;
+  }
+  
+  .Toastify__toast--error {
+    @apply border-red-200;
+  }
+  
+  .Toastify__toast--warning {
+    @apply border-yellow-200;
+  }
+  
+  .Toastify__toast--info {
+    @apply border-blue-200;
+  }
+  
+  .Toastify__toast-body {
+    @apply p-0;
+  }
+  
+  .Toastify__close-button {
+    @apply text-secondary-400 hover:text-secondary-600;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}

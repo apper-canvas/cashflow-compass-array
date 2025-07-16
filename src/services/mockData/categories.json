@@ -1,0 +1,86 @@
+[
+  {
+    "Id": 1,
+    "name": "Salary",
+    "icon": "DollarSign",
+    "color": "#10B981",
+    "type": "income"
+  },
+  {
+    "Id": 2,
+    "name": "Groceries",
+    "icon": "ShoppingCart",
+    "color": "#2563EB",
+    "type": "expense"
+  },
+  {
+    "Id": 3,
+    "name": "Transportation",
+    "icon": "Car",
+    "color": "#F59E0B",
+    "type": "expense"
+  },
+  {
+    "Id": 4,
+    "name": "Housing",
+    "icon": "Home",
+    "color": "#7C3AED",
+    "type": "expense"
+  },
+  {
+    "Id": 5,
+    "name": "Utilities",
+    "icon": "Zap",
+    "color": "#EF4444",
+    "type": "expense"
+  },
+  {
+    "Id": 6,
+    "name": "Dining Out",
+    "icon": "Utensils",
+    "color": "#8B5CF6",
+    "type": "expense"
+  },
+  {
+    "Id": 7,
+    "name": "Coffee & Snacks",
+    "icon": "Coffee",
+    "color": "#A3A3A3",
+    "type": "expense"
+  },
+  {
+    "Id": 8,
+    "name": "Freelance",
+    "icon": "Briefcase",
+    "color": "#06B6D4",
+    "type": "income"
+  },
+  {
+    "Id": 9,
+    "name": "Health & Fitness",
+    "icon": "Heart",
+    "color": "#EC4899",
+    "type": "expense"
+  },
+  {
+    "Id": 10,
+    "name": "Shopping",
+    "icon": "ShoppingBag",
+    "color": "#84CC16",
+    "type": "expense"
+  },
+  {
+    "Id": 11,
+    "name": "Rewards",
+    "icon": "Gift",
+    "color": "#F97316",
+    "type": "income"
+  },
+  {
+    "Id": 12,
+    "name": "Insurance",
+    "icon": "Shield",
+    "color": "#6366F1",
+    "type": "expense"
+  }
+]
