@@ -168,7 +168,7 @@ const QuickActions = ({ onTransactionAdded }) => {
                 required
               >
                 <option value="">Select category</option>
-                {availableCategories.map((category) => (
+{availableCategories.map((category) => (
                   <option key={category.Id} value={category.Id}>
                     {category.name}
                   </option>
@@ -183,7 +183,7 @@ const QuickActions = ({ onTransactionAdded }) => {
                 required
               >
                 <option value="">Select account</option>
-                {accounts.map((account) => (
+{accounts.map((account) => (
                   <option key={account.Id} value={account.Id}>
                     {account.name}
                   </option>

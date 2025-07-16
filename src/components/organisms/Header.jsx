@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Button from "@/components/atoms/Button";
 import ApperIcon from "@/components/ApperIcon";
+import { AuthContext } from "@/App";
 import { motion } from "framer-motion";
 
 const Header = ({ onToggleSidebar }) => {
+  const { logout } = useContext(AuthContext);
+
+  const handleLogout = async () => {
+    await logout();
+  };
+
   return (
     <header className="lg:hidden bg-white border-b border-secondary-200 px-4 py-3">
       <div className="flex items-center justify-between">
@@ -28,6 +35,9 @@ const Header = ({ onToggleSidebar }) => {
         <div className="flex items-center space-x-2">
           <Button variant="ghost" size="sm">
             <ApperIcon name="Bell" className="w-5 h-5" />
+          </Button>
+          <Button variant="ghost" size="sm" onClick={handleLogout}>
+            <ApperIcon name="LogOut" className="w-5 h-5" />
           </Button>
         </div>
       </div>

@@ -222,7 +222,7 @@ message="Start by adding your first transaction to track your finances."
                             required
                           >
                             <option value="">Select category</option>
-                            {availableCategories.map((category) => (
+{availableCategories.map((category) => (
                               <option key={category.Id} value={category.Id}>
                                 {category.name}
                               </option>
