@@ -1,7 +1,21 @@
 import { forwardRef } from "react";
 import { cn } from "@/utils/cn";
 
-const Select = forwardRef(({ className, children, ...props }, ref) => {
+const Select = forwardRef(({ className, children, onValueChange, onChange, ...props }, ref) => {
+  const handleChange = (event) => {
+    const value = event.target.value;
+    
+    // Call the standard onChange if provided
+    if (onChange) {
+      onChange(event);
+    }
+    
+    // Call onValueChange with just the value if provided
+    if (onValueChange) {
+      onValueChange(value);
+    }
+  };
+
   return (
     <select
       className={cn(
@@ -9,6 +23,7 @@ const Select = forwardRef(({ className, children, ...props }, ref) => {
         className
       )}
       ref={ref}
+      onChange={handleChange}
       {...props}
     >
       {children}
