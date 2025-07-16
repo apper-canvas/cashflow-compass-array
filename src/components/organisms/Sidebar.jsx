@@ -17,10 +17,15 @@ const Sidebar = ({ isOpen, onClose }) => {
       href: "/transactions",
       icon: "CreditCard",
     },
-    {
+{
       name: "Budgets",
       href: "/budgets",
       icon: "Target",
+    },
+    {
+      name: "Goals",
+      href: "/goals",
+      icon: "Flag",
     },
     {
       name: "Accounts",

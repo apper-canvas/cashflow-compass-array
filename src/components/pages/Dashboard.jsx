@@ -10,30 +10,32 @@ import { calculateMonthlySpending, calculateTrend } from "@/utils/calculations";
 import { transactionService } from "@/services/api/transactionService";
 import { accountService } from "@/services/api/accountService";
 import { budgetService } from "@/services/api/budgetService";
+import { goalService } from "@/services/api/goalService";
 import { toast } from "react-toastify";
-
 const Dashboard = () => {
-  const [transactions, setTransactions] = useState([]);
+const [transactions, setTransactions] = useState([]);
   const [accounts, setAccounts] = useState([]);
   const [budgets, setBudgets] = useState([]);
+  const [goals, setGoals] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [refreshKey, setRefreshKey] = useState(0);
-
   const loadData = async () => {
     try {
       setLoading(true);
       setError("");
       
-      const [transactionsData, accountsData, budgetsData] = await Promise.all([
+const [transactionsData, accountsData, budgetsData, goalsData] = await Promise.all([
         transactionService.getAll(),
         accountService.getAll(),
-        budgetService.getAll()
+        budgetService.getAll(),
+        goalService.getAll()
       ]);
       
-      setTransactions(transactionsData);
+setTransactions(transactionsData);
       setAccounts(accountsData);
       setBudgets(budgetsData);
+      setGoals(goalsData);
     } catch (err) {
       setError(err.message);
       toast.error("Failed to load dashboard data");
@@ -93,10 +95,9 @@ const Dashboard = () => {
     }, account.balance);
     return sum + balance;
   }, 0);
-
-  const totalBudget = budgets.reduce((sum, budget) => sum + budget.amount, 0);
+const totalBudget = budgets.reduce((sum, budget) => sum + budget.amount, 0);
+  const activeGoals = goals.filter(goal => goal.status === 'active').length;
   const expenseTrend = calculateTrend(currentMonthExpenses, previousMonthExpenses);
-
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
@@ -106,7 +107,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <StatCard
           title="Total Balance"
           value={totalBalance}
@@ -128,10 +129,11 @@ const Dashboard = () => {
           trendLabel="vs last month"
         />
         <StatCard
-          title="Total Budget"
-          value={totalBudget}
-          icon="Target"
-          color="primary"
+          title="Active Goals"
+          value={activeGoals}
+          icon="Flag"
+          color="info"
+          format="number"
         />
       </div>
 

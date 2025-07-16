@@ -1,0 +1,74 @@
+[
+  {
+    "Id": 1,
+    "name": "Emergency Fund",
+    "description": "Build a 6-month emergency fund for unexpected expenses",
+    "targetAmount": 15000,
+    "currentAmount": 8500,
+    "targetDate": "2024-12-31",
+    "category": "Emergency Fund",
+    "status": "active",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "Id": 2,
+    "name": "Dream Vacation",
+    "description": "Save for a 2-week European vacation",
+    "targetAmount": 8000,
+    "currentAmount": 3200,
+    "targetDate": "2024-08-15",
+    "category": "Vacation",
+    "status": "active",
+    "createdAt": "2024-01-10T14:30:00Z",
+    "updatedAt": "2024-01-10T14:30:00Z"
+  },
+  {
+    "Id": 3,
+    "name": "New Car",
+    "description": "Down payment for a reliable used car",
+    "targetAmount": 12000,
+    "currentAmount": 12000,
+    "targetDate": "2024-03-01",
+    "category": "Car Purchase",
+    "status": "completed",
+    "createdAt": "2023-10-01T09:00:00Z",
+    "updatedAt": "2024-03-01T16:45:00Z"
+  },
+  {
+    "Id": 4,
+    "name": "Home Down Payment",
+    "description": "Save 20% down payment for first home purchase",
+    "targetAmount": 50000,
+    "currentAmount": 18750,
+    "targetDate": "2025-06-30",
+    "category": "Home Down Payment",
+    "status": "active",
+    "createdAt": "2023-12-01T11:15:00Z",
+    "updatedAt": "2023-12-01T11:15:00Z"
+  },
+  {
+    "Id": 5,
+    "name": "Professional Certification",
+    "description": "Fund for MBA program tuition and materials",
+    "targetAmount": 25000,
+    "currentAmount": 5000,
+    "targetDate": "2024-09-01",
+    "category": "Education",
+    "status": "paused",
+    "createdAt": "2024-01-05T13:20:00Z",
+    "updatedAt": "2024-01-05T13:20:00Z"
+  },
+  {
+    "Id": 6,
+    "name": "Investment Portfolio",
+    "description": "Build initial investment portfolio",
+    "targetAmount": 10000,
+    "currentAmount": 4200,
+    "targetDate": "2024-10-31",
+    "category": "Investment",
+    "status": "active",
+    "createdAt": "2024-01-20T08:45:00Z",
+    "updatedAt": "2024-01-20T08:45:00Z"
+  }
+]

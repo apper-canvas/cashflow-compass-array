@@ -4,8 +4,8 @@ import Layout from "@/components/organisms/Layout";
 import Dashboard from "@/components/pages/Dashboard";
 import Transactions from "@/components/pages/Transactions";
 import Budgets from "@/components/pages/Budgets";
+import Goals from "@/components/pages/Goals";
 import Accounts from "@/components/pages/Accounts";
-
 function App() {
   return (
     <Router>
@@ -13,8 +13,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Dashboard />} />
-            <Route path="transactions" element={<Transactions />} />
+<Route path="transactions" element={<Transactions />} />
             <Route path="budgets" element={<Budgets />} />
+            <Route path="goals" element={<Goals />} />
             <Route path="accounts" element={<Accounts />} />
           </Route>
         </Routes>
