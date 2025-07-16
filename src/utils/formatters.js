@@ -10,11 +10,17 @@ export const formatCurrency = (amount) => {
 };
 
 export const formatDate = (date) => {
-  return format(new Date(date), "MMM dd, yyyy");
+  if (!date || date === '') return 'Invalid date';
+  const dateObj = new Date(date);
+  if (isNaN(dateObj.getTime())) return 'Invalid date';
+  return format(dateObj, "MMM dd, yyyy");
 };
 
 export const formatDateShort = (date) => {
-  return format(new Date(date), "MMM dd");
+  if (!date || date === '') return 'Invalid';
+  const dateObj = new Date(date);
+  if (isNaN(dateObj.getTime())) return 'Invalid';
+  return format(dateObj, "MMM dd");
 };
 
 export const formatPercent = (value) => {
